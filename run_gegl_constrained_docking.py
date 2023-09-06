@@ -153,3 +153,4 @@ if __name__ == "__main__":
         neptune.log_metric("reference_docking_score", reference_dscore)
         neptune.log_metric("optimized_docking_score", optimized_dscore)
         neptune.log_metric("similarity", similarity)
+        
