@@ -149,6 +149,7 @@ if __name__ == "__main__":
         similarity = TanimotoScoringFunction(target=reference_smi, fp_type="ECFP4").score(
             optimized_smi
         )
+        
 
         neptune.log_metric("id", smi_id)
         neptune.log_text("reference_smi", reference_smi)
