@@ -16,11 +16,7 @@ class PreTrainer:
         self.device = device
 
         action_dataset, _ = smis_to_actions(char_dict=char_dict, smis=dataset)
-        #print("*****")
         action_dataset = torch.LongTensor(action_dataset)
-        print('****')
-        print(action_dataset)#torch.Size([219684, 81])同function.smis_to_actions
-        print('****')
         self.dataset_loader = torch.utils.data.DataLoader(
             dataset=action_dataset, batch_size=batch_size, shuffle=True, num_workers=0
         )
