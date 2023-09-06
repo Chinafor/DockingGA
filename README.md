@@ -33,4 +33,10 @@ All data is stored here:
 
 ./resource/data
 
+5.pyscreener
+
+For pyscreener installation please refer to the following link:
+
+https://github.com/coleygroup/pyscreener
+
 
