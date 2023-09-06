@@ -104,3 +104,4 @@ if __name__ == "__main__":
     result = benchmark.assess_model(guacamol_generator)
 
     neptune.set_property("benchmark_score", result.score)
+    
