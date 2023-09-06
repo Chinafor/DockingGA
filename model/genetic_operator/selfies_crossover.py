@@ -1,8 +1,3 @@
-"""
-SELFIES-based GE crossover methods
-
-Copyright (c) 2021 Elix, Inc.
-"""
 import warnings
 from math import ceil
 
