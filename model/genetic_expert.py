@@ -1,9 +1,3 @@
-"""
-Genetic expert handler class
-
-Copyright (c) 2021 Elix, Inc.
-"""
-
 import gc
 import random
 from typing import List
@@ -14,11 +8,6 @@ from joblib import Parallel, delayed
 from rdkit import Chem
 import sys
 sys.path.append("../")
-# from model.genetic_operator.crossover import *
-# from model.genetic_operator.mutate import *
-# from model.genetic_operator.selfies_crossover import *
-# from model.genetic_operator.selfies_mutate import *
-#from .genetic_operator import crossover, mutate, selfies_crossover, selfies_mutate
 from model.genetic_operator.crossover import crossover
 from model.genetic_operator.mutate import mutate
 from model.genetic_operator.selfies_crossover import selfies_crossover
@@ -74,23 +63,6 @@ class GeneticOperatorHandler:
         return smis
 
 
-
-        # original_smiles = random.choices(mating_pool, k=2 * query_size)
-        # smiles_a, smiles_b = (
-        #     original_smiles[:query_size],
-        #     original_smiles[query_size:],
-        # )
-        # smiles = pool(
-        #     delayed(self.reproduce)(smile_a, smile_b, self.mutation_rate)
-        #     for smile_a, smile_b in zip(smiles_a, smiles_b)
-        # )
-        #
-        # smiles_list = list(filter(lambda smile: smile is not None, smiles))
-        # gc.collect()
-
-
-
-######################
     def reproduce_mols(
         self, parent_a: str, parent_b: str, mutation_rate: float
     ) -> List[str]:
