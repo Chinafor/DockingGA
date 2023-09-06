@@ -1,9 +1,3 @@
-"""
-SELFIES-based GE mutation methods
-
-Copyright (c) 2021 Elix, Inc.
-"""
-
 import random
 
 import numpy as np
