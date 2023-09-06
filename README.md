@@ -29,5 +29,8 @@ CUDA_VISIBLE_DEVICES=$GPU_DEVICE python xx.py
 
 4.Dataset
 
+All data is stored here:
+
+./resource/data
 
 
