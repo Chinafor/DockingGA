@@ -10,6 +10,7 @@ from model.neural_apprentice import SmilesGenerator, SmilesGeneratorHandler
 from util.smiles.dataset import load_dataset
 from util.smiles.char_dict import SmilesCharDictionary
 
+
 import neptune
 
 if __name__ == "__main__":
