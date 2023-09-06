@@ -16,10 +16,7 @@ class SmilesGenerator(nn.Module):
         self.output_size = output_size
         self.n_layers = n_layers
         self.lstm_dropout = lstm_dropout
-#############
 
-        #self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=6)
-        #self.encoder = nn.TransformerEncoder(encoder_layer, num_layers, norm=None)
         self.encoder = nn.Embedding(input_size, hidden_size)
         self.decoder = nn.Linear(1024, output_size)
 
@@ -29,17 +26,14 @@ class SmilesGenerator(nn.Module):
         self.lstm = nn.LSTM(
             hidden_size, hidden_size, batch_first=True, num_layers=n_layers, dropout=lstm_dropout
         )
-        ################
         self.init_weights()
 
     def init_weights(self):
-        # encoder / decoder
         nn.init.xavier_uniform_(self.encoder.weight)
 
         nn.init.xavier_uniform_(self.decoder.weight)
         nn.init.constant_(self.decoder.bias, 0)
 
-        # RNN
         for name, param in self.lstm.named_parameters():
             if "weight" in name:
                 nn.init.orthogonal_(param)
@@ -54,13 +48,6 @@ class SmilesGenerator(nn.Module):
         output = self.transformer(embeds)
         output = self.decoder(output)
         return output, hidden
-    # def forward(self, x, hidden):
-    #     ###########
-    #     embeds = self.encoder(x)
-    #     output, hidden = self.lstm(embeds, hidden)
-    #     ###########
-    #     output = self.decoder(output)
-    #     return output, hidden
 
     @classmethod
     def load(cls, load_dir):
