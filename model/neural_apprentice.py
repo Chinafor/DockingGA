@@ -6,7 +6,6 @@ import torch.nn as nn
 from torch.distributions import Categorical
 from util.smiles.char_dict import SmilesCharDictionary
 from util.smiles.function import smis_to_actions
-#from util.smiles.functionold import smis_to_actions
 
 class SmilesGenerator(nn.Module):
     def __init__(self, input_size, hidden_size, output_size, n_layers, lstm_dropout):
